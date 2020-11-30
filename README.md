@@ -7,11 +7,11 @@ In-depth, step-by-step explanation for some of the steps is given in the Jupyter
 # CHAPTER 1: CAPTURING PHOTOS OF THE CHESS PIECES 
 
 The purpose of this step is creating images that can be used with a photogrammetry software to create 3D models of the pieces. I used the so-called "Void method". Watch this video for more details on this method:
-- [Erik Christensen: Scanning in the Void - A short video on good turntable setups](https://www.youtube.com/watch?v=Il6LVXqSlRg)
+- [**Erik Christensen:** Scanning in the Void - A short video on good turntable setups](https://www.youtube.com/watch?v=Il6LVXqSlRg)
 
 Photogrammetry softwares rely on background features to calculate the camera positions for each image. For this reason, the object must be at rest while the camera moves around it. The point of the "Void method" is to create images that have no features in the background. In this case, the only image features that the photogrammetry software can use are the features on the piece itself. Main advantage of this method is that you can use a turntable and spin the piece while the camera is at rest. In general photogrammetry is very delicate work. Many things can (and will) go wrong. If you do not have the photography equipment, required for the "Void method", you can use normal photogrammetry. Two excellent videos on this subject:
-- [Switch & Lever: How to Copy (almost) Any Object](https://www.youtube.com/watch?v=0WTns1ItVss) 
-- [CG Geek: How to 3D Photoscan Easy and Free!](https://www.youtube.com/watch?v=k4NTf0hMjtY)
+- [**Switch & Lever:** How to Copy (almost) Any Object](https://www.youtube.com/watch?v=0WTns1ItVss) 
+- [**CG Geek:** How to 3D Photoscan Easy and Free!](https://www.youtube.com/watch?v=k4NTf0hMjtY)
 
 In general, the object that you want to scan, must not be reflective, transparent, symmetric, cylindrical or black. It is also better, that the object covers as much of the image as possible. For this reason, cropping images is strongly recommended. Note that photogrammetry softwares require information about the images e.g. camera model, focal lenght, sensor width, exposure time, F-number, ISO, lens focal lenght. They use the help of this information when calculating camera positions. This information is saved in the metadata of each image after the photo is taken. WIth that in mind, it is important to preserve this data, when cropping the images. For this reason, I created the _Original-Images-Cutter-Preserve-Exif.ipynb_ Notebook. It uses the PIL image library which preserves the mentioned information. 
 
@@ -52,5 +52,22 @@ The reason for this is that when the pieces are overlayed on the chessboard, no 
 
 # CHAPTER 4: SYNTHETIC DATA GENERATION
 
-The purpose of this step is to create data that will be later used for training. Besides each image, a textfile with boudingboxes and corresponding labels is needed. To generate synthetic data use _Create-Synthetic-Data.ipynb_ Notebook. It includes very detailed description of what is going on in each step.
+The purpose of this step is to create data that will be later used for training of the object detection model. Besides each image, a textfile with boudingboxes and corresponding labels is needed. To generate synthetic data use _Create-Synthetic-Data.ipynb_ Notebook. It includes very detailed description of what is going on in each step.
+
+# CHAPTER 5: TRAINING OF THE OBJECT DETECTION MODEL
+
+The purpose of this step is to train the chess pieces object detection model. I used [Darknet](https://github.com/AlexeyAB/darknet) YOLOv4 Convolutional Neural Network, which is one the most accurate real-time object detection algorithms. I used GoogleColabratory to train the model. First-class tutorial along with the Colab Notebook is accesible on this link:
+
+- [**The AI Guy:** YOLOv4 in the CLOUD: Build and Train Custom Object Detector (FREE GPU)](https://www.youtube.com/watch?v=mmj3nxGT2YQ)
+
+The model outcome is in the .weights format. In order to use is it in the smartphone application, conversion into .tflite format is neccessary. Code and tutorial on how to convert model from .weights to .tflite format:
+
+- [GitHub: hunglc007](https://github.com/hunglc007/tensorflow-yolov4-tflite)
+
+
+# CHAPTER 6: CHESS POSITION EVALUATOR SMARTPHONE APP
+
+I wrote the smartphone application in Flutter, which is a toolkit that allows compiling code to both Android and iOS devices.
+
+### Code and instructions for application coming soon...
 
