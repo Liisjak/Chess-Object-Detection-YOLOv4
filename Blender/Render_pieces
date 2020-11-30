@@ -1,0 +1,51 @@
+import bpy
+import numpy as np
+
+# Set the render engine
+bpy.context.scene.render.engine = 'BLENDER_EEVEE'
+
+# Set background to transparent
+bpy.context.scene.render.film_transparent = True
+
+# Set the world 'lighting'
+bpy.data.worlds["World"].node_tree.nodes["Background"].inputs[0].default_value = (1, 1, 1, 1)
+
+# Set the Render Sampling amount
+bpy.context.scene.eevee.taa_render_samples = 256
+
+# Set the camera resolution
+bpy.context.scene.render.resolution_x = 1080
+bpy.context.scene.render.resolution_y = 1080
+
+
+# Set the starting frame to 1
+bpy.context.scene.frame_current = 1+1024*0
+
+# All 64 fields coordinates
+coordinates=[[-7,7,0],[-5,7,0],[-3,7,0],[-1,7,0],[1,7,0],[3,7,0],[5,7,0],[7,7,0],[7,5,0],[7,3,0],[7,1,0],[7,-1,0],[7,-3,0],[7,-5,0],[7,-7,0],[5,-7,0],[3,-7,0],[1,-7,0],[-1,-7,0],[-3,-7,0],[-5,-7,0],[-7,-7,0],[-7,-5,0],[-7,-3,0],[-7,-1,0],[-7,1,0],[-7,3,0],[-7,5,0],[-5,5,0],[-3,5,0],[-1,5,0],[1,5,0],[3,5,0],[5,5,0],[5,3,0],[5,1,0],[5,-1,0],[5,-3,0],[5,-5,0],[3,-5,0],[1,-5,0],[-1,-5,0],[-3,-5,0],[-5,-5,0],[-5,-3,0],[-5,-1,0],[-5,1,0],[-5,3,0],[-3,3,0],[-1,3,0],[1,3,0],[3,3,0],[3,1,0],[3,-1,0],[3,-3,0],[1,-3,0],[-1,-3,0],[-3,-3,0],[-3,-1,0],[-3,1,0],[-1,1,0],[1,1,0],[1,-1,0],[-1,-1,0]]
+
+# Scale factor for coordinates
+# Half of the fields lenght in cm, a/2
+a_half=2.15
+unit_scale=0.01*a_half # first number is meters to centimeters
+
+# Scale the coordinates
+coordinates=np.asarray(coordinates)*unit_scale
+
+# Activated (selected) object
+ob = bpy.context.object
+
+
+
+frame_index=1+1024*0
+list=np.linspace(0,15,16)
+
+# Set location and rotation of the activated (selected) object
+for coord in coordinates:
+    ob.location = coord
+    for l in list:
+        angle=np.pi/8*l
+        ob.rotation_euler = (0,0,angle)
+        bpy.context.scene.frame_current = frame_index
+        bpy.ops.anim.keyframe_insert_menu(type='BUILTIN_KSI_LocRot')
+        frame_index = 1 + frame_index
