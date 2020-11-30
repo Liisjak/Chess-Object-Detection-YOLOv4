@@ -2,6 +2,13 @@
 
 ### Watch the presentation of the whole procedure of creating the chess pieces object detection model, position digitiser and smartphone application in this [YouTube video](https://www.youtube.com/watch?v=Tj1lcSwxBYY).
 
+<p float="left">
+  <img src="README/Screenshot-1.png" width="100" />
+  <img src="README/Screenshot-2.png" width="100" />
+  <img src="README/Screenshot-3.png" width="100" />
+  <img src="README/Screenshot-4.png" width="100" />
+</p>
+
 In-depth, step-by-step explanation for some of the steps is given in the Jupyter Notebooks. In the following, instructions on how an when to use the files uploaded in this repository are given. For visual presentation of each step, watching the above Youtube video is recommended.
 
 # CHAPTER 1: CAPTURING PHOTOS OF THE CHESS PIECES 
@@ -9,7 +16,7 @@ In-depth, step-by-step explanation for some of the steps is given in the Jupyter
 The purpose of this step is creating images that can be used with a photogrammetry software to create 3D models of the pieces. I used the so-called "Void method". Watch this video for more details on this method:
 - [**Erik Christensen:** Scanning in the Void - A short video on good turntable setups](https://www.youtube.com/watch?v=Il6LVXqSlRg)
 
-Photogrammetry softwares rely on background features to calculate the camera positions for each image. For this reason, the object must be at rest while the camera moves around it. The point of the "Void method" is to create images that have no features in the background. In this case, the only image features that the photogrammetry software can use are the features on the piece itself. Main advantage of this method is that you can use a turntable and spin the piece while the camera is at rest. In general photogrammetry is very delicate work. Many things can (and will) go wrong. If you do not have the photography equipment, required for the "Void method", you can use normal photogrammetry. Two excellent videos on this subject:
+Photogrammetry softwares rely on background features to calculate the camera positions for each image. For this reason, the object must be at rest while the camera moves around it. The point of the "Void method" is to create images that have no features in the background. In this case, the only image features that the photogrammetry software can use are the features on the piece itself. Main advantage of this method is that you can use a turntable and spin the piece while the camera is at rest. I used a homemade turntable. If you want to create your own as well, you can use either one of my rotation clocks in images _ROTATION-CLOCK-16.png_ and _ROTATION-CLOCK-24.png_. In general photogrammetry is very delicate work. Many things can (and will) go wrong. If you do not have the photography equipment, required for the "Void method", you can use normal photogrammetry. Two excellent videos on this subject:
 - [**Switch & Lever:** How to Copy (almost) Any Object](https://www.youtube.com/watch?v=0WTns1ItVss) 
 - [**CG Geek:** How to 3D Photoscan Easy and Free!](https://www.youtube.com/watch?v=k4NTf0hMjtY)
 
@@ -35,7 +42,7 @@ Pices I used are somewhat reflective, symmetrical and dark (the black ones) and 
 
 # CHAPTER 3: RENDERING OF CHESS PIECES 3D MODELS
 
-The purpose of this step is to create many transparent images of each piece that can be later used for synthetic data generation. The 3D models are in the _Blender/_ folder along with _Render-pieces.blender_ file and corresponding _Render-pieces_ Python script. To render images for each piece, follow the steps:
+The purpose of this step is to create many transparent images of each piece that can be later used for synthetic data generation. I recommend using Blender, since it is one of the 3D modeling softwares that support Python. The 3D models are in the _Blender/_ folder along with _Render-pieces.blender_ file and corresponding _Render-pieces_ Python script. To render images for each piece, follow the steps:
 1. Import the piece (.fbx) you want to render and select/activate it (click on it, it must be highlighted), 
 2. make sure that its render view is activated (camera icon next to piece name in the Scene Collection)
 3. and run the script (alt+p).
