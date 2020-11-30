@@ -3,10 +3,10 @@
 ### Watch the presentation of the whole procedure of creating the chess pieces object detection model, position digitiser and smartphone application in this [YouTube video](https://www.youtube.com/watch?v=Tj1lcSwxBYY).
 
 <p float="left">
-  <img src="README/Screenshot-1.png" width="100" />
-  <img src="README/Screenshot-2.png" width="100" />
-  <img src="README/Screenshot-3.png" width="100" />
-  <img src="README/Screenshot-4.png" width="100" />
+  <img src="README/Screenshot-1.png" width="200" />
+  <img src="README/Screenshot-2.png" width="200" />
+  <img src="README/Screenshot-3.png" width="200" />
+  <img src="README/Screenshot-4.png" width="200" />
 </p>
 
 In-depth, step-by-step explanation for some of the steps is given in the Jupyter Notebooks. In the following, instructions on how an when to use the files uploaded in this repository are given. For visual presentation of each step, watching the above Youtube video is recommended.
