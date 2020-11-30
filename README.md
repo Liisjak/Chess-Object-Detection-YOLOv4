@@ -47,5 +47,5 @@ Each image will be named after its keyframe (e.g. 420.png). Use _Rename-Blender-
 
 
 The reason for this is that when the pieces are overlayed on the chessboard, no overlapping can occur, since fields are filled in the order from the lowest number to the highest, meaning from the outside of the chessboard to the middle.
-![](README/chessboard-render.png)
+![](README/chessboard-render.png&s=0.36)
 
