@@ -41,11 +41,16 @@ The purpose of this step is to create many transparent images of each piece that
 3. and run the script (alt+p).
 
 The script will create keyframes for all 64 positions and all 16 rotations (1024 keyframes). 
+
 4. Choose render output folder and press Render Animation (ctrl + f12).
+
 Each image will be named after its keyframe (e.g. 420.png). Use _Rename-Blender-Render-Images.ipynb_ to rename the images into 'piece-index_chess-field_rotation.png' format. Chess fields are numbered in the spiral shape, starting at a8 and going to h8, h1,... 
-
-
-
+<p align="center">
+<img src="README/chessboard-render.png" width="350" height="350">
+</p>
 The reason for this is that when the pieces are overlayed on the chessboard, no overlapping can occur, since fields are filled in the order from the lowest number to the highest, meaning from the outside of the chessboard to the middle.
-<img src="README/chessboard-render.png" width="400" height="400">
+
+# CHAPTER 4: SYNTHETIC DATA GENERATION
+
+The purpose of this step is to create data that will be later used for training. Besides each image, a textfile with boudingboxes and corresponding labels is needed. To generate synthetic data use _Create-Synthetic-Data.ipynb_ Notebook. It includes very detailed description of what is going on in each step.
 
