@@ -63,7 +63,7 @@ The purpose of this step is to create data that will be later used for training 
 
 # CHAPTER 5: TRAINING OF THE OBJECT DETECTION MODEL
 
-The purpose of this step is to train the chess pieces object detection model. I used [Darknet](https://github.com/AlexeyAB/darknet) YOLOv4 Convolutional Neural Network, which is one the most accurate real-time object detection algorithms. I used GoogleColabratory to train the model. Configuration files I used are in the _YOLOv4_ folder. First-class tutorial along with the Colab Notebook is accesible on this link:
+The purpose of this step is to train the chess pieces object detection model. I used [Darknet](https://github.com/AlexeyAB/darknet) YOLOv4 Convolutional Neural Network, which is one the most accurate real-time object detection algorithms. I used GoogleColabratory to train the model. Configuration files I used are in the _YOLOv4/_ folder. First-class tutorial along with the Colab Notebook is accesible on this link:
 
 - [**The AI Guy:** YOLOv4 in the CLOUD: Build and Train Custom Object Detector (FREE GPU)](https://www.youtube.com/watch?v=mmj3nxGT2YQ)
 
