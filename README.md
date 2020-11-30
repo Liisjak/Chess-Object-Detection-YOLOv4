@@ -19,9 +19,9 @@ In general, the object that you want to scan, must not be reflective, transparen
 
 The purpose of this step is to create 3D models (.obj) of the pieces, using captured images. There are many photogrammetry softwares out there that you can use. Some of the best/easy available are (in the order of "1: strongly recommend" to "3: if others do not work":
 
-- [Agisoft Metashape](https://www.agisoft.com/) (30 day free licence!)
-- [COLMAP](https://colmap.github.io/) (free)
-- [AliceVision Meshroom](https://alicevision.org/) (free, open source)
+1. [Agisoft Metashape](https://www.agisoft.com/) (30 day free licence!)
+2. [COLMAP](https://colmap.github.io/) (free)
+3. [AliceVision Meshroom](https://alicevision.org/) (free, open source)
 
 Agisoft Metashape is probably at least 5 levels above Meshroom, since it provides many tools for camera recalibration and position recalculation. Meshroom is on this list only because it is so easily accesible. A decent graphics card is required to operate these softwares. I used NVIDIA GeForce GTX 1050 and it worked smoothly without any problem. If you do not own graphics card that is good enough, you can use:
 
@@ -30,4 +30,22 @@ Agisoft Metashape is probably at least 5 levels above Meshroom, since it provide
 The downside of this option is that you can only run the default pipeline and no changes can be made. Last resort options are also photogrammetry services, e.g.:
 
 - [MaxCoundOn](https://photogrammetry.maxcloudon.com/)
+
+Pices I used are somewhat reflective, symmetrical and dark (the black ones) and the results were not always perfect. I used Blender 3D modeling software to manually correct the ones that needed corrections. I also exported .fbx file for each model, which I later used for rendering.
+
+# CHAPTER 3: RENDERING OF CHESS PIECES 3D MODELS
+
+The purpose of this step is to create many transparent images of each piece that can be later used for synthetic data generation. The 3D models are in the _Blender/_ folder along with _Render-pieces.blender_ file and corresponding _Render-pieces_ Python script. To render images for each piece, follow the steps:
+1. Import the piece (.fbx) you want to render and select/activate it (click on it, it must be highlighted), 
+2. make sure that its render view is activated (camera icon next to piece name in the Scene Collection)
+3. and run the script (alt+p).
+
+The script will create keyframes for all 64 positions and all 16 rotations (1024 keyframes). 
+4. Choose render output folder and press Render Animation (ctrl + f12).
+Each image will be named after its keyframe (e.g. 420.png). Use _Rename-Blender-Render-Images.ipynb_ to rename the images into 'piece-index_chess-field_rotation.png' format. Chess fields are numbered in the spiral shape, starting at a8 and going to h8, h1,... 
+
+
+
+The reason for this is that when the pieces are overlayed on the chessboard, no overlapping can occur, since fields are filled in the order from the lowest number to the highest, meaning from the outside of the chessboard to the middle.
+![](REAMDE/chessboard-render.png)
 
