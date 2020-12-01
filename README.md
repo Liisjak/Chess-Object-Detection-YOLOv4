@@ -79,3 +79,9 @@ I wrote the smartphone application in Flutter, which is a toolkit that allows co
 
 ### Code and instructions for application coming soon...
 
+# Future ideas and projects:
+
+- Different chess sets recognition models (from 3D models of the pieces found online),
+- Recognition from an arbitrary angle,
+- Implementation of Stockfish into the Flutter app,
+
