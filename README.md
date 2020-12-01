@@ -24,11 +24,12 @@ In general, the object that you want to scan, must not be reflective, transparen
 
 # CHAPTER 2: PHOTOGRAMMETRY - CREATION OF 3D MODELS OF THE PIECES
 
-The purpose of this step is to create 3D models (.obj) of the pieces, using captured images. There are many photogrammetry softwares out there that you can use. Some of the best/easy available are (in the order of "1: strongly recommend" to "3: if others do not work":
+The purpose of this step is to create 3D models (.obj) of the pieces, using captured images. There are many photogrammetry softwares out there that you can use. Some of the best/easy available are (in the order of "1: strongly recommend" to "4: if others do not work":
 
 1. [Agisoft Metashape](https://www.agisoft.com/) (30 day free licence!)
-2. [COLMAP](https://colmap.github.io/) (free)
-3. [AliceVision Meshroom](https://alicevision.org/) (free, open source)
+2. [3DF Zephyr Free](https://www.3dflow.net/3df-zephyr-free/) (free)
+3. [COLMAP](https://colmap.github.io/) (free)
+4. [AliceVision Meshroom](https://alicevision.org/) (free, open source)
 
 Agisoft Metashape is probably at least 5 levels above Meshroom, since it provides many tools for camera recalibration and position recalculation. Meshroom is on this list only because it is so easily accesible. A decent graphics card is required to operate these softwares. I used NVIDIA GeForce GTX 1050 and it worked smoothly without any problem. If you do not own graphics card that is good enough, you can use:
 
