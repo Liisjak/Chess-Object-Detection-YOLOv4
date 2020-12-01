@@ -9,7 +9,7 @@
   <img src="README/Screenshot-4.png" width="200" />
 </p>
 
-In-depth, step-by-step explanation for some of the steps is given in the Jupyter Notebooks. In the following, instructions on how an when to use the files uploaded in this repository are given. For visual presentation of each step, watching the above Youtube video is recommended.
+In-depth, step-by-step explanation for some of the steps is given in the Jupyter Notebooks. In the following, instructions on how and when to use the files uploaded in this repository are given. For visual presentation of each step, watching the above Youtube video is recommended.
 
 # CHAPTER 1: CAPTURING PHOTOS OF THE CHESS PIECES 
 
