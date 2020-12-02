@@ -81,6 +81,7 @@ I wrote the smartphone application in Flutter, which is a toolkit that allows co
 
 # Future ideas and projects:
 
+- Find a way to create smaller models (<50 Mb),
 - Different chess sets recognition models (from 3D models of the pieces found online),
 - Recognition from an arbitrary angle,
 - Implementation of Stockfish into the Flutter app,
