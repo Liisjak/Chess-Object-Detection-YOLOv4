@@ -77,7 +77,7 @@ The model outcome is in the .weights format. In order to use is it in the smartp
 
 I wrote the smartphone application in Flutter, which is a toolkit that allows compiling code to both Android and iOS devices.
 
-### Code and instructions for application coming soon...
+### Code and instructions for application currently unavailable.
 
 # Future ideas and projects:
 
